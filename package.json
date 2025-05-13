@@ -1,0 +1,23 @@
+{
+  "name": "agiles-grupo-4",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Agustin-Caucino/Agiles-grupo-4#readme",
+  "bugs": {
+    "url": "https://github.com/Agustin-Caucino/Agiles-grupo-4/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agustin-Caucino/Agiles-grupo-4.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "ahorcado.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
