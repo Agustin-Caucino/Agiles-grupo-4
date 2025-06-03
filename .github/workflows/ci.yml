@@ -10,14 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
       - name: Configurar Node.js (ejemplo para proyectos Node)
         uses: actions/setup-node@v4
         with:
           node-version: '22.12'
       - name: Instalar dependencias
-        working-directory: ./Agiles-grupo-4
         run: npm install
 
       - name: Ejecutar pruebas
-        working-directory: ./Agiles-grupo-4
         run: npm test
