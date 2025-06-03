@@ -1,0 +1,14 @@
+name: Integración Continua
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Ejecutar pruebas
+        run: npm test
