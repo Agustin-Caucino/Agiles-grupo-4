@@ -49,11 +49,16 @@ class Ahorcado {
       return 'sigue jugando';
     }
   }
+
+  mostrarPalabraConGuiones() {
+    return this.palabra
+      .split('')
+      .map((letra) => (this.letrasAdivinadas.includes(letra) ? letra : '_'))
+      .join(' ');
+  }
 }
 
 module.exports = { Ahorcado };
-
-const { Ahorcado } = require('../ahorcado.js');
 
 const iniciarJuego = () => {
   const palabraAleatoria =
