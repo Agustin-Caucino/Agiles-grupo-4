@@ -1,16 +1,25 @@
+const palabras = [
+  'ejemplo',
+  'agiles',
+  'metodologias',
+  'desarrollo',
+  'frontend',
+  'scrum',
+];
+
 class Ahorcado {
   constructor(palabra) {
-    this.palabra = palabra;
+    this.palabra = palabra.toLocaleLowerCase();
     this.intentos = 6;
     this.cantidadLetras = palabra.length;
-    this.cantidadLetrasDistintas = new Set(palabra).size;
+    this.cantidadLetrasDistintas = new Set(this.palabra).size;
     this.letrasAdivinadas = [];
     this.letrasIntentadas = [];
-    this.adivinanzaCorrecta = 'ejemplo';
-    this.adivinanzaIncorrecta = 'ejemlo';
+    this.adivinanzaCorrecta = this.palabra;
+    this.adivinanzaIncorrecta = this.palabra.slice(0, -1) + 'x';
     this.intentosRestantes = this.intentos;
-    this.intentoFallido = 'x';
-    this.intentoCorrecto = 'e';
+    this.intentoFallido = 'Ü';
+    this.intentoCorrecto = this.palabra.charAt(0);
   }
 
   validarAdivinanza(palabra, adivinanza) {
@@ -18,12 +27,12 @@ class Ahorcado {
   }
 
   intento(intento) {
-    if (this.letrasIntentadas.includes(intento)) {
+    if (this.letrasIntentadas.includes(intento.toLocaleLowerCase())) {
       return 'ya intentada';
     }
-    this.letrasIntentadas.push(intento);
-    if (this.palabra.includes(intento)) {
-      this.letrasAdivinadas.push(intento);
+    this.letrasIntentadas.push(intento.toLocaleLowerCase());
+    if (this.palabra.includes(intento.toLocaleLowerCase())) {
+      this.letrasAdivinadas.push(intento.toLocaleLowerCase());
       return true;
     } else {
       this.intentosRestantes--;
@@ -43,3 +52,11 @@ class Ahorcado {
 }
 
 module.exports = { Ahorcado };
+
+const { Ahorcado } = require('../ahorcado.js');
+
+const iniciarJuego = () => {
+  const palabraAleatoria =
+    palabras[Math.floor(Math.random() * palabras.length)];
+  const ahorcado = new Ahorcado(palabraAleatoria);
+};
