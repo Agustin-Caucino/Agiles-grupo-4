@@ -7,7 +7,7 @@ class Ahorcado {
     this.letrasAdivinadas = [];
     this.letrasIntentadas = [];
     this.adivinanzaCorrecta = this.palabra;
-    this.adivinanzaIncorrecta = this.palabra.slice(0, -1) + 'x';
+    this.adivinanzaIncorrecta = this.palabra.slice(0, -1) + 'Ü';
     this.intentosRestantes = this.intentos;
     this.intentoFallido = 'Ü';
     this.intentoCorrecto = this.palabra.charAt(0);
@@ -18,7 +18,7 @@ class Ahorcado {
   }
 
   intento(intento) {
-    if (intento.length != 1 || !/^[a-zA-Z]$/.test(intento)) {
+    if (intento.length != 1 || !/^[a-zA-ZÜüáéíóúñüÁÉÍÓÚÑ]$/.test(intento)) {
       return 'intento invalido';
     }
     if (this.letrasIntentadas.includes(intento.toLocaleLowerCase())) {
