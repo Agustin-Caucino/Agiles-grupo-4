@@ -1,12 +1,3 @@
-const palabras = [
-  'ejemplo',
-  'agiles',
-  'metodologias',
-  'desarrollo',
-  'frontend',
-  'scrum',
-];
-
 class Ahorcado {
   constructor(palabra) {
     this.palabra = palabra.toLocaleLowerCase();
@@ -27,6 +18,9 @@ class Ahorcado {
   }
 
   intento(intento) {
+    if (intento.length != 1 || !/^[a-zA-Z]$/.test(intento)) {
+      return 'intento invalido';
+    }
     if (this.letrasIntentadas.includes(intento.toLocaleLowerCase())) {
       return 'ya intentada';
     }
@@ -59,9 +53,3 @@ class Ahorcado {
 }
 
 module.exports = { Ahorcado };
-
-const iniciarJuego = () => {
-  const palabraAleatoria =
-    palabras[Math.floor(Math.random() * palabras.length)];
-  const ahorcado = new Ahorcado(palabraAleatoria);
-};

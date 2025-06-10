@@ -14,6 +14,10 @@ describe('Funciones críticas para el ahorcado', () => {
     ).toBe(true);
   });
 
+  it('debería evitar que intente más de una letra', () => {
+    expect(ahorcado.intento('ejemplo')).toBe('intento invalido');
+  });
+
   it('debería confirmar el intento fallido de adivinar la palabra', () => {
     expect(
       ahorcado.validarAdivinanza(
@@ -53,5 +57,9 @@ describe('Funciones críticas para el ahorcado', () => {
   it('debería no dejar adivinar una letra ya intentada', () => {
     ahorcado.intento(ahorcado.intentoCorrecto);
     expect(ahorcado.intento(ahorcado.intentoCorrecto)).toBe('ya intentada');
+  });
+
+  it('debería devolver un string de guiones para la palabra', () => {
+    expect(ahorcado.mostrarPalabraConGuiones()).toEqual('_ _ _ _ _ _ _');
   });
 });
