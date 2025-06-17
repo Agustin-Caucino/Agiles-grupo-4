@@ -19,10 +19,10 @@ class Ahorcado {
 
   intento(intento) {
     if (intento.length != 1 || !/^[a-zA-ZÜüáéíóúñüÁÉÍÓÚÑ]$/.test(intento)) {
-      return 'intento invalido';
+      return false;
     }
     if (this.letrasIntentadas.includes(intento.toLocaleLowerCase())) {
-      return 'ya intentada';
+      return false;
     }
     this.letrasIntentadas.push(intento.toLocaleLowerCase());
     if (this.palabra.includes(intento.toLocaleLowerCase())) {
