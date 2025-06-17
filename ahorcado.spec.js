@@ -44,7 +44,7 @@ describe('Funciones críticas para el ahorcado', () => {
   });
 
   it('debería confirmar que perdió', () => {
-    for (letra of letrasIncorrectas) {
+    for (let letra of letrasIncorrectas) {
       ahorcado.intento(letra);
     }
     expect(ahorcado.resultado()).toEqual('perdio');

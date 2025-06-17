@@ -18,7 +18,7 @@ class Ahorcado {
   }
 
   intento(intento) {
-    if (intento.length != 1 || !/^[a-zA-ZÜüáéíóúñüÁÉÍÓÚÑ]$/.test(intento)) {
+    if (intento.length != 1 || !/^[a-zA-ZÜüáéíóúñÁÉÍÓÚÑ]$/.test(intento)) {
       return false;
     }
     if (this.letrasIntentadas.includes(intento.toLocaleLowerCase())) {
