@@ -52,4 +52,5 @@ class Ahorcado {
   }
 }
 
-module.exports = { Ahorcado };
+export { Ahorcado };
+// module.exports = { Ahorcado };
