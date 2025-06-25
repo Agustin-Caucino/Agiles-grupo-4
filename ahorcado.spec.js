@@ -1,4 +1,4 @@
-const { Ahorcado } = require('./ahorcado.js');
+const Ahorcado = require('./ahorcado.js');
 
 let ahorcado = null;
 let letrasIncorrectas = [];

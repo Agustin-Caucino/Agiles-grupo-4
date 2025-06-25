@@ -1,4 +1,4 @@
-import { Ahorcado } from '../ahorcado.js';
+const Ahorcado = window.Ahorcado;
 
 let juegoActual = null;
 
@@ -81,7 +81,6 @@ function crearAlfabeto() {
 function iniciarJuego() {
   const palabra =
     palabras[Math.floor(Math.random() * palabras.length)].toLocaleLowerCase();
-
   juegoActual = new Ahorcado(palabra);
   crearAlfabeto();
   actualizarDisplay();

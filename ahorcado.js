@@ -52,5 +52,9 @@ class Ahorcado {
   }
 }
 
-export { Ahorcado };
-// module.exports = { Ahorcado };
+// Exportar la clase Ahorcado solo si el codigo se ejecuta en un entorno commonJS
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Ahorcado;
+} else {
+  window.Ahorcado = Ahorcado;
+}
