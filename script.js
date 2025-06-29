@@ -1,5 +1,12 @@
 const Ahorcado = window.Ahorcado;
 
+// const { JSDOM } = require('jsdom');
+
+// // In your Jest setup file (e.g., jest.config.js setupFiles array)
+// const dom = new JSDOM();
+// global.document = dom.window.document;
+// global.window = dom.window;
+
 let juegoActual = null;
 
 const posicionesAhorcado = [
