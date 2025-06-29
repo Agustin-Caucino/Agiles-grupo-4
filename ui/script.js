@@ -64,7 +64,7 @@ let palabras = [
 ];
 
 function crearAlfabeto() {
-  const alphabet = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
+  const alphabet = 'QWERTYUIOPASDFGHJKLÑZXCVBNM';
   const alphabetContainer = document.getElementById('alphabet');
   alphabetContainer.innerHTML = '';
 
