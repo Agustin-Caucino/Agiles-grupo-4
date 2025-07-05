@@ -64,7 +64,6 @@ O   |
 let palabras = [
   'programacion',
   'javascript',
-  'python',
   'desarrollo',
   'agilidad',
   'tecnologia',
