@@ -32,7 +32,7 @@ Then('debería crearse un nuevo juego', async function () {
 
 // Probando Letras
 Given('que inició un juego', async function () {
-  // await driver.get('https://agustin-caucino.github.io/Agiles-grupo-4/');
+  await driver.get('https://agustin-caucino.github.io/Agiles-grupo-4/');
   await driver.findElement(By.id('start-game')).click();
 });
 
