@@ -18,6 +18,7 @@ let driver = new Builder()
 // Iniciando Juego
 Given('que estoy en la pantalla principal', async function () {
   await driver.get('https://agustin-caucino.github.io/Agiles-grupo-4/');
+  await driver.wait(until.elementLocated(By.id('start-game')));
 });
 
 When('selecciono juego nuevo', async function () {
@@ -32,8 +33,8 @@ Then('debería crearse un nuevo juego', async function () {
 
 // Probando Letras
 Given('que inició un juego', async function () {
-  await driver.manage().setTimeouts({ implicit: 10000 });
   await driver.get('https://agustin-caucino.github.io/Agiles-grupo-4/');
+  await driver.wait(until.elementLocated(By.id('start-game')));
   await driver.findElement(By.id('start-game')).click();
 });
 
