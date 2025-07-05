@@ -4,7 +4,6 @@ const Ahorcado = require('../../ahorcado.js');
 const { Builder, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 
-let juego;
 let ultimoResultado;
 let ultimaValidacion;
 const options = new chrome.Options();
@@ -19,7 +18,6 @@ let driver = new Builder()
 // Iniciando Juego
 Given('que estoy en la pantalla principal', async function () {
   await driver.get('https://agustin-caucino.github.io/Agiles-grupo-4/');
-  juego = null;
 });
 
 When('selecciono juego nuevo', async function () {
@@ -29,7 +27,7 @@ When('selecciono juego nuevo', async function () {
 Then('debería crearse un nuevo juego', async function () {
   const element = await driver.findElement(By.id('word-display'));
   const textoFinal = await element.getText();
-  assert.ok(textoFinal.trim() !== '');
+  assert.ok(textoFinal.includes('_'));
 });
 
 // Probando Letras
