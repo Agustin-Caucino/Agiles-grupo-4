@@ -10,7 +10,7 @@ setDefaultTimeout(60000);
 let ultimoResultado;
 let ultimaValidacion;
 const options = new chrome.Options();
-// options.addArguments('--headless');
+options.addArguments('--headless');
 options.addArguments('--no-sandbox');
 options.addArguments('--disable-dev-shm-usage');
 let driver = new Builder()
