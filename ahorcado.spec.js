@@ -59,6 +59,8 @@ describe('Funciones críticas para el ahorcado', () => {
     expect(ahorcado.intento(ahorcado.intentoCorrecto)).toBe(false);
   });
 
+  // agregar tests faltantes
+
   it('debería devolver un string de guiones para la palabra', () => {
     expect(ahorcado.mostrarPalabraConGuiones()).toEqual('_ _ _ _ _ _ _');
   });
