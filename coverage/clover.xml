@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1753277236679" clover="3.2.0">
-  <project timestamp="1753277236679" name="All files">
+<coverage generated="1753278485115" clover="3.2.0">
+  <project timestamp="1753278485115" name="All files">
     <metrics statements="32" coveredstatements="31" conditionals="18" coveredconditionals="16" methods="6" coveredmethods="6" elements="56" coveredelements="53" complexity="0" loc="32" ncloc="32" packages="1" files="1" classes="1"/>
     <file name="ahorcado.js" path="C:\Users\Usuario\OneDrive\Escritorio\Facultad\Metodologías Ágiles para el desarrollo de software\Agiles-grupo-4\ahorcado.js">
       <metrics statements="32" coveredstatements="31" conditionals="18" coveredconditionals="16" methods="6" coveredmethods="6"/>

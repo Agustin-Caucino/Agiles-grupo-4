@@ -3,11 +3,14 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const Ahorcado = require('../../ahorcado.js');
 const { Builder, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
+const { setDefaultTimeout } = require('@cucumber/cucumber');
+
+setDefaultTimeout(60000);
 
 let ultimoResultado;
 let ultimaValidacion;
 const options = new chrome.Options();
-// options.addArguments('--headless');
+options.addArguments('--headless');
 options.addArguments('--no-sandbox');
 options.addArguments('--disable-dev-shm-usage');
 let driver = new Builder()
@@ -32,35 +35,19 @@ Then('debería crearse un nuevo juego', async function () {
   assert.ok(textoFinal.includes('_'));
 });
 
-// Probando Letras
-// Given('que inició un juego', async function () {
-//   await driver.get('https://agustin-caucino.github.io/Agiles-grupo-4/');
-//   await driver.wait(until.elementLocated(By.id('start-game')));
-//   await driver.findElement(By.id('start-game')).click();
-// });
-
 Given('que inició un juego', async function () {
   await driver.get('https://agustin-caucino.github.io/Agiles-grupo-4/');
-
-  // 1. Esperar a que la página se cargue completamente
   await driver.wait(until.elementLocated(By.id('start-game')), 1000);
-
-  // 2. Obtener referencia fresca del elemento cada vez
   const startButton = await driver.findElement(By.id('start-game'));
-
-  // 3. Esperar a que el elemento sea visible y clickeable
   await driver.wait(until.elementIsVisible(startButton), 2000);
   await driver.wait(until.elementIsEnabled(startButton), 2000);
 
-  // 4. Click con manejo de errores
   try {
     await startButton.click();
   } catch (error) {
     // Fallback: usar JavaScript click si el click normal falla
     await driver.executeScript('arguments[0].click();', startButton);
   }
-
-  // 5. Verificar que el juego realmente se inició
   await driver.wait(until.elementLocated(By.id('word-display')), 1000);
   const wordDisplay = await driver.findElement(By.id('word-display'));
   await driver.wait(until.elementTextContains(wordDisplay, '_'), 1000);
