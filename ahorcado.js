@@ -30,7 +30,7 @@ class Ahorcado {
       return true;
     } else {
       this.intentosRestantes--;
-      return false;
+      return true;
     }
   }
 
